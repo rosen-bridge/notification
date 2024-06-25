@@ -1,6 +1,6 @@
 {
   "name": "@rosen-bridge/discord-notification",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "repository": "https://github.com/rosen-bridge/notification",
   "license": "GPL-3.0",
   "author": "Rosen Team",
@@ -30,5 +30,9 @@
   },
   "engines": {
     "node": ">=20.11.0"
+  },
+  "dependencies": {
+    "@rosen-bridge/abstract-notification": "^0.1.0",
+    "discord.js": "^14.15.3"
   }
 }
