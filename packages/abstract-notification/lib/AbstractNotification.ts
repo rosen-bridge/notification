@@ -1,15 +1,13 @@
-abstract class AbstractNotification {
-  abstract error(title: string, message: string): Promise<void>;
-  abstract warning(title: string, message: string): Promise<void>;
-  abstract info(title: string, message: string): Promise<void>;
-  abstract success(title: string, message: string): Promise<void>;
-  abstract raw(title: string, message: string): Promise<void>;
+import { NotifyWithSeverity, Notify } from './types';
 
-  notify = (
-    severity: 'error' | 'warning' | 'info' | 'success' | 'raw',
-    title: string,
-    message: string,
-  ) => {
+abstract class AbstractNotification {
+  abstract error: Notify;
+  abstract warning: Notify;
+  abstract info: Notify;
+  abstract success: Notify;
+  abstract raw: Notify;
+
+  notify: NotifyWithSeverity = (severity, title, message) => {
     return this[severity](title, message);
   };
 }
