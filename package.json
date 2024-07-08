@@ -16,7 +16,7 @@
     "test": "npm run test --workspaces",
     "test:related": "NODE_OPTIONS=--loader=extensionless vitest related --run",
     "type-check": "npm run type-check --workspaces",
-    "version": "npx changeset version && npm i"
+    "version": "npx changeset version && npm i && npx changeset --empty"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
