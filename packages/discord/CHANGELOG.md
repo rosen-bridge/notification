@@ -1,5 +1,11 @@
 # @rosen-bridge/discord-notification
 
+## 0.1.3
+
+### Patch Changes
+
+- Fix returning the sending message promise
+
 ## 0.1.2
 
 ### Patch Changes
