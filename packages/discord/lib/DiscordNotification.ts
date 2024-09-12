@@ -15,8 +15,8 @@ class DiscordNotification extends AbstractNotification {
    * send a string to Discord, trimming all lines
    * @param message
    */
-  private sendMessage = (message: string) => {
-    return this.client.send({
+  private sendMessage = async (message: string) => {
+    await this.client.send({
       content: message.replace(/^ +| +$/gm, ''), // trim all lines
     });
   };
@@ -27,7 +27,7 @@ class DiscordNotification extends AbstractNotification {
    * @param message
    */
   error = async (title: string, message: string) => {
-    return this.sendMessage(`
+    await this.sendMessage(`
       ## ❌ ${title}
       ${message}
       `);
@@ -39,7 +39,7 @@ class DiscordNotification extends AbstractNotification {
    * @param message
    */
   warning = async (title: string, message: string) => {
-    return this.sendMessage(`
+    await this.sendMessage(`
       ## ⚠️ ${title}
       ${message}
       `);
@@ -51,7 +51,7 @@ class DiscordNotification extends AbstractNotification {
    * @param message
    */
   info = async (title: string, message: string) => {
-    return this.sendMessage(`
+    await this.sendMessage(`
       ## ℹ️ ${title}
       ${message}
       `);
@@ -63,7 +63,7 @@ class DiscordNotification extends AbstractNotification {
    * @param message
    */
   success = async (title: string, message: string) => {
-    return this.sendMessage(`
+    await this.sendMessage(`
       ## ✅ ${title}
       ${message}
       `);
@@ -75,7 +75,7 @@ class DiscordNotification extends AbstractNotification {
    * @param message
    */
   raw = async (title: string, message: string) => {
-    return this.sendMessage(`
+    await this.sendMessage(`
       ## ${title}
       ${message}
       `);
