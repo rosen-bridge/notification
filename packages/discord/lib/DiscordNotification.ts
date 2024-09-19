@@ -39,7 +39,7 @@ class DiscordNotification extends AbstractNotification {
    * @param message
    */
   error = async (title: string, message: string) =>
-    this.sendMessage(`❌ ${title}`, message, 0xff0000);
+    this.sendMessage(`❌ ${title}`, message, 0xd32f2f);
 
   /**
    * send a warning notification
@@ -47,7 +47,7 @@ class DiscordNotification extends AbstractNotification {
    * @param message
    */
   warning = async (title: string, message: string) =>
-    this.sendMessage(`⚠️ ${title}`, message, 0xff0000);
+    this.sendMessage(`⚠️ ${title}`, message, 0xed6c02);
 
   /**
    * send an info notification
@@ -55,7 +55,7 @@ class DiscordNotification extends AbstractNotification {
    * @param message
    */
   info = async (title: string, message: string) =>
-    this.sendMessage(`ℹ️ ${title}`, message, 0xff0000);
+    this.sendMessage(`ℹ️ ${title}`, message, 0x0288d1);
 
   /**
    * send a success notification
@@ -63,7 +63,7 @@ class DiscordNotification extends AbstractNotification {
    * @param message
    */
   success = async (title: string, message: string) =>
-    this.sendMessage(`✅ ${title}`, message, 0xff0000);
+    this.sendMessage(`✅ ${title}`, message, 0x2e7d32);
 
   /**
    * send a raw notification
