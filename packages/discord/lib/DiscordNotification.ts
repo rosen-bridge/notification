@@ -1,10 +1,13 @@
 import { AbstractNotification } from '@rosen-bridge/abstract-notification';
-import { WebhookClient } from 'discord.js';
+import { EmbedBuilder, WebhookClient } from 'discord.js';
 
 class DiscordNotification extends AbstractNotification {
   private client: WebhookClient;
 
-  constructor(webhookURL: string) {
+  constructor(
+    webhookURL: string,
+    private serviceName?: string,
+  ) {
     super();
     this.client = new WebhookClient({
       url: webhookURL,
@@ -15,9 +18,18 @@ class DiscordNotification extends AbstractNotification {
    * send a string to Discord, trimming all lines
    * @param message
    */
-  private sendMessage = async (message: string) => {
+  private sendMessage = async (
+    title: string,
+    message: string,
+    color: number,
+  ) => {
+    const embed = new EmbedBuilder()
+      .setAuthor({ name: this.serviceName ?? ' ' })
+      .setTitle(title)
+      .setDescription(message.replace(/^ +| +$/gm, ''))
+      .setColor(color);
     await this.client.send({
-      content: message.replace(/^ +| +$/gm, ''), // trim all lines
+      embeds: [embed],
     });
   };
 
@@ -26,60 +38,40 @@ class DiscordNotification extends AbstractNotification {
    * @param title
    * @param message
    */
-  error = async (title: string, message: string) => {
-    await this.sendMessage(`
-      ## ❌ ${title}
-      ${message}
-      `);
-  };
+  error = async (title: string, message: string) =>
+    this.sendMessage(`❌ ${title}`, message, 0xff0000);
 
   /**
    * send a warning notification
    * @param title
    * @param message
    */
-  warning = async (title: string, message: string) => {
-    await this.sendMessage(`
-      ## ⚠️ ${title}
-      ${message}
-      `);
-  };
+  warning = async (title: string, message: string) =>
+    this.sendMessage(`⚠️ ${title}`, message, 0xff0000);
 
   /**
    * send an info notification
    * @param title
    * @param message
    */
-  info = async (title: string, message: string) => {
-    await this.sendMessage(`
-      ## ℹ️ ${title}
-      ${message}
-      `);
-  };
+  info = async (title: string, message: string) =>
+    this.sendMessage(`ℹ️ ${title}`, message, 0xff0000);
 
   /**
    * send a success notification
    * @param title
    * @param message
    */
-  success = async (title: string, message: string) => {
-    await this.sendMessage(`
-      ## ✅ ${title}
-      ${message}
-      `);
-  };
+  success = async (title: string, message: string) =>
+    this.sendMessage(`✅ ${title}`, message, 0xff0000);
 
   /**
    * send a raw notification
    * @param title
    * @param message
    */
-  raw = async (title: string, message: string) => {
-    await this.sendMessage(`
-      ## ${title}
-      ${message}
-      `);
-  };
+  raw = async (title: string, message: string) =>
+    this.sendMessage(`${title}`, message, 0x000000);
 }
 
 export default DiscordNotification;
