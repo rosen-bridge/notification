@@ -16,7 +16,9 @@ class DiscordNotification extends AbstractNotification {
 
   /**
    * send a string to Discord, trimming all lines
+   * @param title
    * @param message
+   * @param color
    */
   private sendMessage = async (
     title: string,
