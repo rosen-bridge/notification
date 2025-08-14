@@ -1,9 +1,9 @@
 {
   "name": "@rosen-bridge/abstract-notification",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A package containing abstract classes of notification services used inside Rosen Bridge",
   "repository": "https://github.com/rosen-bridge/notification",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "author": "Rosen Team",
   "type": "module",
   "main": "dist/index.js",
