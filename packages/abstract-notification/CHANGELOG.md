@@ -1,5 +1,11 @@
 # @rosen-bridge/abstract-notification
 
+## 0.3.0
+
+### Minor Changes
+
+- Dummy Notification class
+
 ## 0.2.1
 
 ### Patch Changes
