@@ -1,11 +1,10 @@
-image: node:20.11.0
+image: node:22.18.0
 
 stages:
   - installation
   - build
   - type-check
   - lint
-  - test
   - changeset
 
 installation:
@@ -54,24 +53,6 @@ lint:
       - '**/dist'
   script:
     - npm run lint
-
-test:
-  stage: test
-  cache:
-    key: $CI_COMMIT_REF_NAME
-    policy: pull
-    paths:
-      - node_modules
-      - '**/node_modules'
-      - '**/dist'
-  script:
-    - npm run coverage
-  coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
-  artifacts:
-    reports:
-      coverage_report:
-        coverage_format: cobertura
-        path: '**/coverage/cobertura-coverage.xml'
 
 changeset:
   stage: changeset

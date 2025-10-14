@@ -1,3 +1,3 @@
-export { default as AbstractNotification } from './AbstractNotification';
-export { default as DummyNotification } from './DummyNotification';
+export { default as AbstractNotification } from './abstractNotification';
+export { default as DummyNotification } from './dummyNotification';
 export * from './types';

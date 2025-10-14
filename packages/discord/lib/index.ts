@@ -1,1 +1,1 @@
-export { default as DiscordNotification } from './DiscordNotification';
+export { default as DiscordNotification } from './discordNotification';
