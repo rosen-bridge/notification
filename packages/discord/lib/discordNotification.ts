@@ -1,5 +1,6 @@
-import { AbstractNotification } from '@rosen-bridge/abstract-notification';
 import { EmbedBuilder, WebhookClient } from 'discord.js';
+
+import { AbstractNotification } from '@rosen-bridge/abstract-notification';
 
 class DiscordNotification extends AbstractNotification {
   private client: WebhookClient;
