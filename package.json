@@ -10,6 +10,7 @@
   "scripts": {
     "build": "npm run build --workspaces",
     "lint": "npm run lint --workspaces",
+    "lint:check": "npm run lint:check --workspaces",
     "prepare": "husky install",
     "release": "npm run release --workspaces",
     "test:related": "NODE_OPTIONS=--loader=extensionless vitest related --run",
