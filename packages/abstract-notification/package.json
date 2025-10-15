@@ -1,6 +1,6 @@
 {
   "name": "@rosen-bridge/abstract-notification",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "A package containing abstract classes of notification services used inside Rosen Bridge",
   "repository": {
     "type": "git",
