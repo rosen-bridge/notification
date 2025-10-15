@@ -1,5 +1,16 @@
 # @rosen-bridge/discord-notification
 
+## 1.0.0
+
+### Major Changes
+
+- Update node version into 22.18.0 and update rosen-dependencies also update eslint
+
+### Patch Changes
+
+- Update dependencies
+  - @rosen-bridge/abstract-notification@1.0.0
+
 ## 0.2.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @rosen-bridge/abstract-notification
 
+## 1.0.0
+
+### Major Changes
+
+- Update node version into 22.18.0 and update rosen-dependencies also update eslint
+
 ## 0.3.0
 
 ### Minor Changes
