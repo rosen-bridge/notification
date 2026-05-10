@@ -1,4 +1,4 @@
-import AbstractNotification from './abstractNotification';
+import AbstractNotification from './abstractNotification.js';
 
 class DummyNotification extends AbstractNotification {
   error = () => Promise.resolve();

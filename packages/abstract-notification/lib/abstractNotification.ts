@@ -1,4 +1,4 @@
-import { NotifyWithSeverity, Notify } from './types';
+import { NotifyWithSeverity, Notify } from './types.js';
 
 abstract class AbstractNotification {
   abstract error: Notify;
